@@ -369,15 +369,15 @@ func ForceSoapLogin(endpoint ForceEndpoint, username string, password string) (c
 	identity := u.Scheme + "://" + u.Host + "/id/" + orgid + "/" + result.Id
 	creds = ForceCredentials{result.SessionId, identity, result.Id, instanceUrl, "", "", endpoint == EndpointCustom, "", endpoint}
 
-	f := NewForce(creds)
-	url := fmt.Sprintf("https://force-cli.herokuapp.com/auth/soaplogin/?id=%s&access_token=%s&instance_url=%s", creds.Id, creds.AccessToken, creds.InstanceUrl)
+	//f := NewForce(creds)
+	//url := fmt.Sprintf("https://force-cli.herokuapp.com/auth/soaplogin/?id=%s&access_token=%s&instance_url=%s", creds.Id, creds.AccessToken, creds.InstanceUrl)
 
-	body, err := f.httpGet(url)
-	if err != nil {
-		fmt.Println(err.Error())
-		return
-	}
-	fmt.Println("Save login was ", string(body))
+	//body, err := f.httpGet(url)
+	//if err != nil {
+	//	fmt.Println(err.Error())
+	//	return
+	//}
+	//fmt.Println("Save login was ", string(body))
 	return
 }
 
